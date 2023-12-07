@@ -8,6 +8,27 @@ const Review = () => {
 
   const { name, job, image, text } = data[index];
 
+  const handleNext = () => {
+    index < data.length - 1 ? setIndex(index+1) : setIndex(0)
+  }
+
+  const handlePrev = () => {
+    index === 0 ? setIndex(data.length-1) : setIndex(index-1)
+  }
+
+  const handleRandom = () => {
+    let randomNumber = Math.floor(Math.random() * (data.length - 1));
+
+    if(randomNumber===index){
+        randomNumber= index+1
+    }
+    return setIndex(randomNumber)
+  }
+
+
+
+
+
   return (
     <div className="review">
       <div className="img-div">
