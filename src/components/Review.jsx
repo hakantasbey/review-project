@@ -28,7 +28,6 @@ const Review = () => {
 
 
 
-
   return (
     <div className="review">
       <div className="img-div">
