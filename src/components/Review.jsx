@@ -1,27 +1,39 @@
-import React from 'react'
-import data from "../data"
+import React from "react";
+import data from "../data";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
-import { useState } from 'react';
+import { useState } from "react";
 
 const Review = () => {
-    const[index,setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
-    const{name,job,image,text} = data[index]
-
+  const { name, job, image, text } = data[index];
 
   return (
-    <div className='review'>
-        <div className='img-div'>
-            <img src={image} alt={name} />
-            <span className='quote-icon'>
-                <FaQuoteRight/>
-            </span>
-        </div>
-        <h4 className='author'>{name}</h4>
-        <p className='job'>{job}</p>
-        <p className='info'>{text}</p>
-    </div>
-  )
-}
+    <div className="review">
+      <div className="img-div">
+        <img src={image} alt={name} />
+        <span className="quote-icon">
+          <FaQuoteRight />
+        </span>
+      </div>
+      <h4 className="author">{name}</h4>
+      <p className="job">{job}</p>
+      <p className="info">{text}</p>
+      <div className="button-container">
+        <button className="prev-btn" onClick={handlePrev}>
+          <FaChevronLeft />
+        </button>
 
-export default Review
+        <button className="next-btn" onClick={handleNext}>
+          <FaChevronRight />
+        </button>
+      </div>
+
+      <button className="random-btn" onClick={handleRandom}>
+        Suprise Me
+        </button>
+    </div>
+  );
+};
+
+export default Review;
